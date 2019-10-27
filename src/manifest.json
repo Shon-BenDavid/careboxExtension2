@@ -1,0 +1,50 @@
+{
+  "name": "careboxtest",
+  "short_name": "Get Selector",
+  "description": "Find unique CSS selector of any item on your page. Open context menu and Copy to clipboard",
+  "version": "0.1",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "*://*/*",
+    "contextMenus",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "selectionMarker.css"
+      ],
+      "js": [
+        "selection_marker.js"
+      ]
+    }
+  ],
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "background": {
+    "scripts": [
+      "background_page.js"
+    ]
+  },
+  "browser_action": {
+    "name": "get all selectors"
+  },
+  "browser_action": {
+    "default_title": "make it so"
+  },
+  "manifest_version": 2
+}
