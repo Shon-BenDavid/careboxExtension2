@@ -1,0 +1,44 @@
+{
+  "name": "untitled",
+  "version": "1.0.0",
+  "dependencies": {},
+  "scripts": {
+    "copy": "rm -rf ./bin && mkdir -p ./bin && cp src/manifest.json bin/manifest.json && cp src/*.js bin/ && cp src/*.png bin/",
+    "__build": "npm run copy",
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack --config webpack.config.js --env=dev:chrome:benchmark --progress --colors && cp src/index.html dist/index.html && cp src/manifest.json dist/manifest.json && cp src/*.png dist/ && cp  src/selectionMarker/selectionMarker.css dist/selectionMarker.css"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.40",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "bestzip": "^2.1.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-preact": "^1.1.6",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.2.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "generate-json-webpack-plugin": "^0.2.2",
+    "html-loader": "^0.4.5",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.1.3",
+    "markdown-loader": "^2.0.0",
+    "prettier-eslint": "^8.0.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.0.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "@medv/finder": "^1.1.2"
+  }
+}
